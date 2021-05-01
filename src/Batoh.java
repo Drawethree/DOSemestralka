@@ -4,6 +4,7 @@ import java.util.List;
 public class Batoh {
 
 	private static final int MAX_PREDMETOV = 400;
+	private static final int CAPACITY = 12_000;
 
 	private List<Predmet> predmety;
 
@@ -29,7 +30,7 @@ public class Batoh {
 
 		System.out.println("====RUN====");
 
-		while (this.predmety.size() > MAX_PREDMETOV || this.aktualnaHmotnost > 12000) {
+		while (this.predmety.size() > MAX_PREDMETOV || this.aktualnaHmotnost > CAPACITY) {
 			Predmet toRemove = this.getNextPredmet();
 			this.aktualnaHmotnost -= toRemove.getVaha();
 			this.hodnotaUF -= toRemove.getCena();

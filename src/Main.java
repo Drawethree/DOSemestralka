@@ -6,11 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-
-	private static final int CAPACITY = 12_000;
-
 	public static void main(String[] args) throws FileNotFoundException {
-
 
 		Scanner scanner1 = new Scanner(new File("H6_a.txt"));
 		Scanner scanner2 = new Scanner(new File("H6_c.txt"));
