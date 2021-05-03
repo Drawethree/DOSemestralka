@@ -43,14 +43,6 @@ public class Batoh {
 
 	}
 
-	public double getAktualnaHmotnost() {
-		return aktualnaHmotnost;
-	}
-
-	public double getHodnotaUF() {
-		return hodnotaUF;
-	}
-
 	public int getPocetPredmetov() {
 		return this.predmety.size();
 	}
