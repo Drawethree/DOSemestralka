@@ -15,7 +15,7 @@ public class Batoh {
 		this.predmety = predmets;
 		this.aktualnaHmotnost = this.predmety.stream().mapToDouble(Predmet::getVaha).sum();
 		this.hodnotaUF = this.predmety.stream().mapToDouble(Predmet::getCena).sum();
-		this.predmety.sort(Comparator.comparing(Predmet::getKoeficient).reversed());
+		this.predmety.sort(Comparator.comparing(Predmet::getKoeficient));
 
 		System.out.println("====INIT====");
 		System.out.println("Pocet predmetov v batohu: " + predmety.size());
@@ -31,26 +31,20 @@ public class Batoh {
 		System.out.println("====RUN====");
 
 		while (this.predmety.size() > MAX_PREDMETOV || this.aktualnaHmotnost > CAPACITY) {
-			Predmet toRemove = this.getNextPredmet();
+			Predmet toRemove = this.predmety.remove(0);
 			this.aktualnaHmotnost -= toRemove.getVaha();
 			this.hodnotaUF -= toRemove.getCena();
-			this.predmety.remove(toRemove);
 			System.out.println("Vyhadzujem predmet: " + toRemove.toString());
 			System.out.println("Pocet Predmetov: " + this.predmety.size());
 			System.out.println("Aktualna hmotnost: " + this.aktualnaHmotnost);
 			System.out.println("Ucelova funkcia: " + this.hodnotaUF);
 		}
-
 		System.out.println("====RUN====");
 
 	}
 
 	public double getAktualnaHmotnost() {
 		return aktualnaHmotnost;
-	}
-
-	public Predmet getNextPredmet() {
-		return this.predmety.get(this.predmety.size() - 1);
 	}
 
 	public double getHodnotaUF() {
