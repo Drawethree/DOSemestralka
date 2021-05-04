@@ -27,9 +27,11 @@ public class Main {
         batoh.run();
         System.out.println("===VYSLEDOK===");
         System.out.println(batoh);
+        for (Predmet p : batoh.getPredmety()) {
+            System.out.println(p);
+        }
         System.out.println("===VYSLEDOK===");
 
-        System.out.println("===VYSLEDOK ZAPISANY DO VYSLEDOK.TXT===");
         BufferedWriter writer = new BufferedWriter(new FileWriter("vysledok.txt"));
         writer.write(batoh.toString() + "\n");
 
@@ -38,6 +40,6 @@ public class Main {
         }
 
         writer.close();
-
+        System.out.println("===VYSLEDOK BOL ZAPISANY DO VYSLEDOK.TXT===");
     }
 }
