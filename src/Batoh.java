@@ -55,4 +55,8 @@ public class Batoh {
 				", hodnotaUF=" + this.hodnotaUF +
 				'}';
 	}
+
+	public List<Predmet> getPredmety() {
+		return predmety;
+	}
 }
